@@ -25,4 +25,10 @@ public class AccountShould {
     account.deposit(1000);
     verify(repository).deposit(1000);
   }
+
+  @Test
+  void withdraws_500() {
+    account.withdraw(500);
+    verify(repository).withdraw(500);
+  }
 }

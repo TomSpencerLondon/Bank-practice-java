@@ -8,4 +8,8 @@ public class Repository {
   public void deposit(int amount) {
     transactions.add(new Transaction(amount));
   }
+
+  public void withdraw(int amount) {
+    transactions.add(new Transaction(-amount));
+  }
 }

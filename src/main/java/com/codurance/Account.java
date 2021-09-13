@@ -14,6 +14,7 @@ public class Account {
   }
 
   public void withdraw(int amount) {
+    repository.withdraw(amount);
   }
 
   public void printStatement() {
