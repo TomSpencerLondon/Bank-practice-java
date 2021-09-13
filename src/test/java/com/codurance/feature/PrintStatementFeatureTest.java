@@ -1,6 +1,7 @@
 package com.codurance.feature;
 
 import com.codurance.Account;
+import com.codurance.Clock;
 import com.codurance.Console;
 import com.codurance.Repository;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,25 +12,33 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.mockito.BDDMockito.given;
+
 @ExtendWith(MockitoExtension.class)
 public class PrintStatementFeatureTest {
   @Mock
   Console console;
   @Mock
+  Clock clock;
+
   Repository repository;
   private Account account;
 
   @BeforeEach
   void setUp() {
+    repository = new Repository(clock);
     account = new Account(console, repository);
   }
 
   @Test
   public void print_statement_containing_all_transactions() {
+    given(clock.getDate()).willReturn("01/04/2014", "02/04/2014", "10/04/2014");
     account.deposit(1000);
     account.withdraw(100);
     account.deposit(500);
     account.printStatement();
+
+
 
     InOrder inOrder = Mockito.inOrder(console);
 
