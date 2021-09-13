@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.codurance.AccountShould" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-13T21:17:14" hostname="Toms-MBP-2" time="0.388">
+  <properties/>
+  <testcase name="deposits_1000()" classname="com.codurance.AccountShould" time="0.388"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
